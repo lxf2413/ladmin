@@ -1062,8 +1062,8 @@
     <!-- / footer -->
 </div>
 <!-- jQuery -->
-<script src="./static/vendor/jquery/jquery.min.js"></script>
-<script src="./static/vendor/jquery/bootstrap.js"></script>
+<script src="./static/library/jquery/jquery.min.js"></script>
+<script src="./static/library/jquery/bootstrap.js"></script>
 <script type="text/javascript">
     +function ($) {
         $(function(){
