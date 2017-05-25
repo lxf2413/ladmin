@@ -5,12 +5,12 @@
     <title>Be Angular | Bootstrap Admin Web App with AngularJS</title>
     <meta name="description" content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
-    <link rel="stylesheet" href="css/animate.css" type="text/css" />
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
-    <link rel="stylesheet" href="css/simple-line-icons.css" type="text/css" />
-    <link rel="stylesheet" href="css/font.css" type="text/css" />
-    <link rel="stylesheet" href="css/app.css" type="text/css" />
+    <link rel="stylesheet" href="./static/admin/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="./static/admin/css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="./static/admin/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="./static/admin/css/simple-line-icons.css" type="text/css" />
+    <link rel="stylesheet" href="./static/admin/css/font.css" type="text/css" />
+    <link rel="stylesheet" href="./static/admin/css/app.css" type="text/css" />
 </head>
 <body>
 <div class="app app-header-fixed" id="app">
@@ -27,7 +27,7 @@
             <!-- brand -->
             <a href="#/" class="navbar-brand text-lt">
                 <i class="fa fa-btc"></i>
-                <img src="img/logo.png" alt="." class="hide">
+                <img src="./static/admin/image/logo.png" alt="." class="hide">
                 <span class="hidden-folded m-l-xs">Angulr</span>
             </a>
             <!-- / brand -->
@@ -209,7 +209,7 @@
                             <div class="list-group">
                                 <a href class="media list-group-item">
                     <span class="pull-left thumb-sm">
-                      <img src="img/a0.jpg" alt="..." class="img-circle">
+                      <img src="./static/admin/image/a0.jpg" alt="..." class="img-circle">
                     </span>
                     <span class="media-body block m-b-none">
                       Use awesome animate.css<br>
@@ -234,7 +234,7 @@
                 <li class="dropdown">
                     <a href="#" data-toggle="dropdown" class="dropdown-toggle clear" data-toggle="dropdown">
               <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
-                <img src="img/a0.jpg" alt="...">
+                <img src="./static/admin/image/a0.jpg" alt="...">
                 <i class="on md b-white bottom"></i>
               </span>
                         <span class="hidden-sm hidden-md">John.Smith</span> <b class="caret"></b>
@@ -286,7 +286,7 @@
                     <div class="dropdown wrapper">
                         <a ui-sref="app.page.profile">
                 <span class="thumb-lg w-auto-folded avatar m-t-sm">
-                  <img src="img/a0.jpg" class="img-full" alt="...">
+                  <img src="./static/admin/image/a0.jpg" class="img-full" alt="...">
                 </span>
                         </a>
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle hidden-folded">
@@ -737,12 +737,12 @@
             <!-- COPY the content from "tpl/" -->
             <div class="hbox hbox-auto-xs hbox-auto-sm">
                 <div class="col">
-                    <div style="background:url(img/c4.jpg) center center; background-size:cover">
+                    <div style="background:url(./static/admin/image/c4.jpg) center center; background-size:cover">
                         <div class="wrapper-lg bg-white-opacity">
                             <div class="row m-t">
                                 <div class="col-sm-7">
                                     <a href class="thumb-lg pull-left m-r">
-                                        <img src="img/a0.jpg" class="img-circle">
+                                        <img src="./static/admin/image/a0.jpg" class="img-circle">
                                     </a>
                                     <div class="clear m-b">
                                         <div class="m-b m-t-sm">
@@ -783,7 +783,7 @@
                         <div class="streamline b-l b-info m-l-lg m-b padder-v">
                             <div>
                                 <a class="pull-left thumb-sm avatar m-l-n-md">
-                                    <img src="img/a9.jpg" class="img-circle" alt="...">
+                                    <img src="./static/admin/image/a9.jpg" class="img-circle" alt="...">
                                 </a>
                                 <div class="m-l-lg">
                                     <div class="m-b-xs">
@@ -805,7 +805,7 @@
                             <!-- .comment-reply -->
                             <div class="m-l-lg">
                                 <a class="pull-left thumb-sm avatar">
-                                    <img src="img/a5.jpg" alt="...">
+                                    <img src="./static/admin/image/a5.jpg" alt="...">
                                 </a>
                                 <div class="m-l-xxl panel b-a">
                                     <div class="panel-heading pos-rlt">
@@ -821,7 +821,7 @@
                             <!-- / .comment-reply -->
                             <div>
                                 <a class="pull-left thumb-sm avatar m-l-n-md">
-                                    <img src="img/a3.jpg" alt="...">
+                                    <img src="./static/admin/image/a3.jpg" alt="...">
                                 </a>
                                 <div class="m-l-lg m-b-lg panel b-a bg-light lt">
                                     <div class="panel-heading pos-rlt b-light">
@@ -838,7 +838,7 @@
                             </div>
                             <div>
                                 <a class="pull-left thumb-sm avatar m-l-n-md">
-                                    <img src="img/a6.jpg" class="img-circle" alt="...">
+                                    <img src="./static/admin/image/a6.jpg" class="img-circle" alt="...">
                                 </a>
                                 <div class="m-l-lg m-b-lg">
                                     <div class="m-b-xs">
@@ -849,7 +849,7 @@
                                     </div>
                                     <div class="m-b">
                                         <div class="m-b">Cecteter adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. ullamcorper sodales nisi nec adipiscing elit. Morbi id neque quam. Aliquam sollicitudin </div>
-                                        <img src="img/c5.jpg" class="b b-a wrapper-xs bg-white img-responsive">
+                                        <img src="./static/admin/image/c5.jpg" class="b b-a wrapper-xs bg-white img-responsive">
                                         <div class="m-t-sm">
                                             <a href class="text-muted m-xs"><i class="icon-action-redo"></i></a>
                                             <a href class="text-muted m-xs"><i class="icon-star"></i></a>
@@ -860,7 +860,7 @@
                             </div>
                             <div>
                                 <a class="pull-left thumb-sm avatar m-l-n-md">
-                                    <img src="img/a4.jpg" class="img-circle" alt="...">
+                                    <img src="./static/admin/image/a4.jpg" class="img-circle" alt="...">
                                 </a>
                                 <div class="m-l-lg m-b-lg">
                                     <div class="m-b-xs">
@@ -888,7 +888,7 @@
                             </div>
                             <div>
                                 <a class="pull-left thumb-sm avatar m-l-n-md">
-                                    <img src="img/a2.jpg" alt="...">
+                                    <img src="./static/admin/image/a2.jpg" alt="...">
                                 </a>
                                 <div class="m-l-lg panel b-a">
                                     <div class="panel-heading pos-rlt b-b b-light">
@@ -918,7 +918,7 @@
                             <ul class="list-group no-bg no-borders pull-in">
                                 <li class="list-group-item">
                                     <a herf class="pull-left thumb-sm avatar m-r">
-                                        <img src="img/a4.jpg" alt="..." class="img-circle">
+                                        <img src="./static/admin/image/a4.jpg" alt="..." class="img-circle">
                                         <i class="on b-white bottom"></i>
                                     </a>
                                     <div class="clear">
@@ -928,7 +928,7 @@
                                 </li>
                                 <li class="list-group-item">
                                     <a herf class="pull-left thumb-sm avatar m-r">
-                                        <img src="img/a5.jpg" alt="..." class="img-circle">
+                                        <img src="./static/admin/image/a5.jpg" alt="..." class="img-circle">
                                         <i class="on b-white bottom"></i>
                                     </a>
                                     <div class="clear">
@@ -938,7 +938,7 @@
                                 </li>
                                 <li class="list-group-item">
                                     <a herf class="pull-left thumb-sm avatar m-r">
-                                        <img src="img/a6.jpg" alt="..." class="img-circle">
+                                        <img src="./static/admin/image/a6.jpg" alt="..." class="img-circle">
                                         <i class="busy b-white bottom"></i>
                                     </a>
                                     <div class="clear">
@@ -948,7 +948,7 @@
                                 </li>
                                 <li class="list-group-item">
                                     <a herf class="pull-left thumb-sm avatar m-r">
-                                        <img src="img/a7.jpg" alt="..." class="img-circle">
+                                        <img src="./static/admin/image/a7.jpg" alt="..." class="img-circle">
                                         <i class="away b-white bottom"></i>
                                     </a>
                                     <div class="clear">
@@ -978,7 +978,7 @@
                         <div class="panel b-light clearfix">
                             <div class="panel-body">
                                 <a href class="thumb pull-left m-r">
-                                    <img src="img/a0.jpg" class="img-circle">
+                                    <img src="./static/admin/image/a0.jpg" class="img-circle">
                                 </a>
                                 <div class="clear">
                                     <a href class="text-info">@Mike Mcalidek <i class="fa fa-twitter"></i></a>
@@ -1007,7 +1007,7 @@
                     <div class="cell-inner padder">
                         <!-- chat list -->
                         <div class="m-b">
-                            <a href class="pull-left thumb-xs avatar"><img src="img/a2.jpg" alt="..."></a>
+                            <a href class="pull-left thumb-xs avatar"><img src="./static/admin/image/a2.jpg" alt="..."></a>
                             <div class="clear">
                                 <div class="pos-rlt wrapper-sm b b-light r m-l-sm">
                                     <span class="arrow left pull-up"></span>
@@ -1017,7 +1017,7 @@
                             </div>
                         </div>
                         <div class="m-b">
-                            <a href class="pull-right thumb-xs avatar"><img src="img/a3.jpg" class="img-circle" alt="..."></a>
+                            <a href class="pull-right thumb-xs avatar"><img src="./static/admin/image/a3.jpg" class="img-circle" alt="..."></a>
                             <div class="clear">
                                 <div class="pos-rlt wrapper-sm bg-light r m-r-sm">
                                     <span class="arrow right pull-up arrow-light"></span>
@@ -1027,7 +1027,7 @@
                             </div>
                         </div>
                         <div class="m-b">
-                            <a href class="pull-left thumb-xs avatar"><img src="img/a2.jpg" alt="..."></a>
+                            <a href class="pull-left thumb-xs avatar"><img src="./static/admin/image/a2.jpg" alt="..."></a>
                             <div class="clear">
                                 <div class="pos-rlt wrapper-sm b b-light r m-l-sm">
                                     <span class="arrow left pull-up"></span>
@@ -1062,8 +1062,8 @@
     <!-- / footer -->
 </div>
 <!-- jQuery -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/jquery/bootstrap.js"></script>
+<script src="./static/vendor/jquery/jquery.min.js"></script>
+<script src="./static/vendor/jquery/bootstrap.js"></script>
 <script type="text/javascript">
     +function ($) {
         $(function(){
