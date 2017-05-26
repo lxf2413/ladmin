@@ -11,7 +11,11 @@
 |
 */
 //前台入口
-Route::get('/', ['uses'=>'Index\IndexController@index']);
+Route::get('/', 'Index\IndexController@index');
 //后台入口
+Route::auth();
 Route::get('admin', ['uses'=>'Admin\IndexController@index']);
+
+
+
 
