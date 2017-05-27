@@ -13,8 +13,10 @@
 //前台入口
 Route::get('/', 'Index\IndexController@index');
 //后台入口
-Route::auth();
-Route::get('admin', ['uses'=>'Admin\IndexController@index']);
+Route::group(['middleware'=>'checklogin'],function(){
+    Route::get('admin', ['uses'=>'Admin\IndexController@index']);
+});
+Route::get('login',['uses'=>'Admin\UserController@login']);
 
 
 

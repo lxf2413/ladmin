@@ -8,10 +8,11 @@
 
 namespace App\Http\Middleware;
 use Closure;
+use Illuminate\Support\Facades\Session;
 
-class Test{
+class CheckLogin{
   public function handle($request,Closure $next){
-      if ($request->input('age') <= 200) {
+      if(!Session::has('admininfo')){
           return redirect('login');
       }
       return $next($request);
