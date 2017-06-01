@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Session;
 class CheckLogin{
   public function handle($request,Closure $next){
       if(!Session::has('admininfo')){
-          return redirect('login');
+          return redirect('user/login');
       }
       return $next($request);
   }
