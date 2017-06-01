@@ -13,7 +13,5 @@ class UserController extends Controller{
     public function login(){
         return view('admin.user.login');
     }
-    public function register(){
-        return view('admin.user.register');
-    }
+
 }
