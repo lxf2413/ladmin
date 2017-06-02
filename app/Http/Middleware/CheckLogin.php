@@ -8,11 +8,14 @@
 
 namespace App\Http\Middleware;
 use Closure;
-use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Cookie;
 
 class CheckLogin{
   public function handle($request,Closure $next){
-      if(!Session::has('admininfo')){
+//      $info = Cookie::get('admininfo');
+//      $info = cookie('admininfo');
+//      dd($info);
+      if(!Cookie::has('admininfo')){
           return redirect('user/login');
       }
       return $next($request);

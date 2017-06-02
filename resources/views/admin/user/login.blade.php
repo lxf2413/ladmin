@@ -4,32 +4,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>后台管理</title>
-
-    <!-- Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
-
-    <style>
-        body {
-            font-family: 'Lato';
-        }
-
-        .fa-btn {
-            margin-right: 6px;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ URL::asset('static/Library/bootstrap/css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ URL::asset('static/Library/font-awesome/css/font-awesome.min.css') }}" />
+    <link rel="stylesheet" href="{{ URL::asset('static/Library/diy/diy.css') }}" />
 </head>
 <body id="app-layout">
 <nav class="navbar navbar-default navbar-static-top">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="{{ url('login') }}">
+            <a class="navbar-brand" href="{{ url('admin') }}">
                 后台管理
             </a>
         </div>
@@ -46,31 +30,18 @@
             <div class="panel panel-default">
                 <div class="panel-heading">登录</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+                    <form class="form-horizontal" id="oForm">
                         {{ csrf_field() }}
-                        <div class="form-group has-error">
+                        <div class="form-group">
                             <label for="email" class="col-md-4 control-label">账号：</label>
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                    <strong>{{ $errors->first('email') }}</strong>
-                                </span>
-                                @endif
+                                <input id="uname" type="text" placeholder="账号" class="form-control" name="uname" >
                             </div>
                         </div>
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                        <div class="form-group">
                             <label for="password" class="col-md-4 control-label">密码：</label>
-
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password">
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                    <strong>{{ $errors->first('password') }}</strong>
-                                </span>
-                                @endif
+                                <input id="password" type="password" placeholder="密码" class="form-control" name="password">
                             </div>
                         </div>
 
@@ -78,16 +49,21 @@
                             <div class="col-md-6 col-md-offset-4">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="remember"> Remember Me
+                                        <input type="checkbox" checked name="remember"> Remember Me
                                     </label>
                                 </div>
                             </div>
                         </div>
-
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                            <div class="col-md-6 col-md-offset-4" id="login">
+                                <button type="button" id="login-btn" class="btn btn-primary">
                                     <i class="fa fa-btn fa-sign-in"></i> 登录
+                                </button>
+                            </div>
+                            <div class="col-md-6 col-md-offset-4 hidden" id="logining">
+                                <button type="button"  class="btn btn-warning">
+                                    <i class="fa fa-spinner fa-spin"></i>
+                                    <strong>登录中...</strong>
                                 </button>
                             </div>
                         </div>
@@ -97,7 +73,41 @@
         </div>
     </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="{{ URL::asset('static/Library/jquery/jquery.min.js') }}" />
+<script src="{{ URL::asset('static/Library/bootstrap/js/bootstrap.min.js') }}"></script>
+<script type="text/javascript">
+    $("#login-btn").click(function(){
+        if($("#uname").val()==''){
+            $("#uname").parents('.form-group').addClass('has-error');
+            return;
+        }
+        if($("#password").val()==''){
+            $("#password").parents('.form-group').addClass('has-error');
+            return;
+        }
+        //登录
+        $("#login").addClass('hidden');
+        $("#logining").removeClass('hidden');
+        $.ajax({
+            type:'post',
+            url:"{{url('user/login')}}",
+            data:$("#oForm").serialize(),
+            success:function(data){
+                if(data.sta){
+                    location.href='{{url('admin')}}'
+                }else{
+                    alert(data.message);
+                }
+            },
+            error:function(){
+
+            },
+            complete:function(){
+                $("#login").removeClass('hidden');
+                $("#logining").addClass('hidden');
+            }
+        });
+    });
+</script>
 </body>
 </html>

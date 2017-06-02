@@ -17,12 +17,7 @@ Route::group(['middleware'=>'checklogin'],function(){
     Route::get('admin', ['uses'=>'Admin\IndexController@index']);
 });
 //后台用户登录
-Route::get('user/login',['uses'=>'Admin\UserController@login']);
-//后台用户注册
-Route::get('user/register',['uses'=>'Admin\UserController@register']);
-//后台用户重置密码
-Route::get('user/reset',['uses'=>'Admin\UserController@reset']);
-
-
+Route::any('user/login',['uses'=>'Admin\UserController@login']);
+//App::abort(502);
 
 
