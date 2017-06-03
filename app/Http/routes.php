@@ -11,7 +11,7 @@
 |
 */
 //前台入口
-Route::get('/', 'Index\IndexController@index');
+Route::get('/', 'Home\IndexController@index');
 //后台入口
 Route::group(['middleware'=>'checklogin'],function(){
     Route::get('admin', ['uses'=>'Admin\IndexController@index']);
@@ -19,5 +19,7 @@ Route::group(['middleware'=>'checklogin'],function(){
 //后台用户登录
 Route::any('user/login',['uses'=>'Admin\UserController@login']);
 //App::abort(502);
+//demo演示
+Route::get('demo',['uses'=>'Admin\IndexController@demo']);
 
 

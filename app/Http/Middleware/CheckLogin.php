@@ -12,9 +12,6 @@ use Illuminate\Support\Facades\Cookie;
 
 class CheckLogin{
   public function handle($request,Closure $next){
-//      $info = Cookie::get('admininfo');
-//      $info = cookie('admininfo');
-//      dd($info);
       if(!Cookie::has('admininfo')){
           return redirect('user/login');
       }

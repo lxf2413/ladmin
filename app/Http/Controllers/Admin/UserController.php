@@ -11,7 +11,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Cookie;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Response;
 
 class UserController extends Controller{
     public function login(Request $request){
@@ -27,9 +26,6 @@ class UserController extends Controller{
                    'message' => '登录信息有误！'
                ];
             }else{
-//               $respones = new Response();
-//                $cookie = Cookie::make('admininfo', $info, 300);
-//                $respones->json(['status'=>true,'message'=>'登录成功！'])->withCookie($cookie);
                 Cookie::queue('admininfo','111','300');
                 return [
                     'status' => true,

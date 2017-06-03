@@ -93,8 +93,8 @@
             url:"{{url('user/login')}}",
             data:$("#oForm").serialize(),
             success:function(data){
-                if(data.sta){
-                    location.href='{{url('admin')}}'
+                if(data.status){
+                    location.href='{{url('admin')}}';
                 }else{
                     alert(data.message);
                 }
