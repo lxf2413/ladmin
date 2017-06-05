@@ -1,19 +1,24 @@
 @extends('home.common.master')
 @section('title','博客首页')
 @section('content')
-    <div class="post">
+    <div class="left" id="main">
+        <div id="main_content">
+            <div class="post">
 
-        <div class="post_title"><h2><a href="#">Template Information</a></h2></div>
-        <div class="post_date">Posted on Dec 15th at 20:47 from <a href="#">Viktor Persson</a></div>
+                <div class="post_title"><h2><a href="#">我的博客成立了！</a></h2></div>
+                <div class="post_date">2017-6-3 </div>
 
-        <div class="post_body">
+                <div class="post_body">
 
-         首页测试内容
+                    首页测试内容
 
-        </div>
+                </div>
 
-        <div class="post_meta">
-            <a href="#">5 comments</a> | Tagged: <a href="#">Sapien</a>, <a href="#">Sollicitudin</a>, <a href="#">Ligula</a>
+                <div class="post_meta">
+                    5 <a class="fa fa-eye"></a> | 8 <a  class="fa fa-thumbs-o-up"></a> | 10 <a class="fa fa-commenting"></a> | 5 <a  class="fa fa-heart"></a>
+                </div>
+            </div>
         </div>
     </div>
+
 @endsection

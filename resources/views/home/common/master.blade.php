@@ -1,27 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>@yield('title')</title>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-    <meta name="description" content=""/>
-    <meta name="keywords" content="" />
-    <meta name="author" content="L&Y" />
-    <link rel="stylesheet" type="text/css" href="{{asset('static/home/css/index.css')}}" media="screen" />
-</head>
+@include('home.common.header')
 <body>
 <header>
     <div class="center_wrapper">
         <div id="toplinks">
             <div id="toplinks_inner">
-                <a href="#">Sitemap</a> | <a href="#">Privacy Policy</a> | <a href="#">FAQ</a>
+                <a href="#">Sitemap</a> | <a href="#">Privacy Policy</a> | <a href="{{url('user/login')}}">登录</a>
             </div>
         </div>
         <div class="clearer">&nbsp;</div>
 
         <div id="site_title">
-            <h1><a href="#">Emplode <span>Website Template</span></a></h1>
-            <p>A free website template built using XHTML and CSS</p>
+            <h1><a href="#">L&Y <span>'s blog</span></a></h1>
+            <p>记录我的技术成长！</p>
         </div>
     </div>
 </header>
@@ -29,11 +19,12 @@
 <nav id="navigation">
     <div class="center_wrapper">
         <ul>
-            <li class="current_page_item"><a href="index.html">Home</a></li>
-            <li><a href="blog_post.html">Blog Post</a></li>
-            <li><a href="style_demo.html">Style Demo</a></li>
-            <li><a href="archives.html">Archives</a></li>
-            <li><a href="empty_page.html">Empty Page</a></li>
+            <li @if(Request::getPathInfo() == '/') class="current_page_item" @endif><a href="{{url('/')}}">Home</a></li>
+            <li><a href="blog_post.html">Jquey</a></li>
+            <li><a href="style_demo.html">PHP</a></li>
+            <li><a href="archives.html">JAVA</a></li>
+            <li><a href="empty_page.html">Linux </a></li>
+            <li @if(Request::getPathInfo() == '/message') class="current_page_item" @endif><a href="{{url('message')}}">留言</a></li>
         </ul>
         <div class="clearer">&nbsp;</div>
     </div>
@@ -42,11 +33,7 @@
 <div id="main_wrapper_outer">
     <div id="main_wrapper_inner">
         <div class="center_wrapper">
-            <div class="left" id="main">
-                <div id="main_content">
-                   @yield('content')
-                </div>
-            </div>
+            @yield('content')
 
             <div class="right" id="sidebar">
 
@@ -181,21 +168,7 @@
         </div>
     </div>
 </div>
-
-<div id="footer">
-    <div class="center_wrapper">
-
-        <div class="left">
-            &copy; 2008 Website.com - Your Website Slogan
-        </div>
-        <div class="right">
-            <a href="http://www.cssmoban.com/">Website template</a> from <a href="http://cssmoban.com/">cssMoban.com</a>
-        </div>
-
-        <div class="clearer">&nbsp;</div>
-
-    </div>
-</div>
+@include('home.common.footer')
 
 </body>
 </html>

@@ -1,3 +1,18 @@
 .hidden{
     display: none;
 }
+.fr{
+    float: right;
+}
+.ft{
+    float: right;
+}
+.tr{
+    text-align: right;
+}
+.tl{
+    text-align: left;
+}
+.mouse{
+    cursor: pointer;
+}
