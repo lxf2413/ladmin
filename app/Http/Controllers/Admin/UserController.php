@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller{
     public function login(Request $request){
-        if($request->isMethod('get')){
+        if($request->isMethod('GET')){
             return view('admin.user.login');
         }else{
             $data = $request->input();

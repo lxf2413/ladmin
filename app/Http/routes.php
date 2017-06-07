@@ -15,7 +15,10 @@ Route::get('/', 'Home\IndexController@index');
 Route::get('message','Home\MessageController@index');
 Route::get('user/login','Home\UserController@login');
 Route::get('user/reset','Home\UserController@reset');
-Route::get('user/regiter','Home\UserController@regiter');
+
+Route::any('user/register','Home\UserController@register');
+
+
 
 
 
