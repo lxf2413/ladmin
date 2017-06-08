@@ -19,12 +19,40 @@ class UserController extends Controller{
         if($request->isMethod('get')){
             return view('home.user.register');
         }else{
-//            $data = request()->input();
-            $this->validate($request,[
-                'uname' => 'required|min:2|max:20',
-                'password' => 'required|integer',
-                'again_password' => 'required|integer'
-            ]);
+            $this->validate($request,
+                [
+                    'uname' => 'required|min:2|max:20',
+                    'password' => 'required|integer',
+                    'again_password' => 'required|integer'
+                ],[
+                    'required'=>'请填写:attribute！',
+                    'min'=> ':attribute长度不符合！',
+                    'max'=> ':attribute长度不符合！',
+                    'integer'=> ':attribute必须为整型！',
+
+                ],[
+                    'uname' => '姓名',
+                    'password' => '密码',
+                    'again_password' => '确认密码'
+                ]);
+//            $validator = \Validator::make($request->input(),[
+//                'uname' => 'required|min:2|max:20',
+//                'password' => 'required|integer',
+//                'again_password' => 'required|integer'
+//            ],[
+//                'required'=>'请填写:attribute！',
+//                'min'=> ':attribute长度不符合！',
+//                'max'=> ':attribute长度不符合！',
+//                'integer'=> ':attribute必须为整型！',
+//
+//            ],[
+//                'uname' => '姓名',
+//                'password' => '密码',
+//                'again_password' => '确认密码'
+//            ]);
+//            if($validator->fails()){
+//                redirect()->back()->withErrors($validator);
+//            }
             echo 1;
 //            DB::table('user')->where(['uname'=>])
         }

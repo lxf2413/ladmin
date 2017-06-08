@@ -20,28 +20,29 @@
         <div class="right_box col-xs-5">
             <div>
                <div>
-                   @if(count($errors))
-                       <ul>
-                           @foreach($errors->all() as $error)
-                               <li>{{$error}}</li>
-                           @endforeach
-                       </ul>
-                   @endif
                    <form action="" method="post">
                        {{csrf_field()}}
-                       <div class="form-group has-error">
+                       <div class="form-group @if($errors->first('uname'))has-error @endif">
                            <label>账户</label>
-                           <input type="text" name="uname" class="form-control"  placeholder="账号">
+                           <input type="text" name="uname" class="form-control" value="{{old('uname')}}" placeholder="账号">
                        </div>
-                       <div class="form-group">
+                       <div class="form-group  @if($errors->first('password'))has-error @endif">
                            <label>密码</label>
-                           <input type="password" name="password" class="form-control" placeholder="密码">
+                           <input type="password" name="password" class="form-control" value="{{old('password')}}" placeholder="密码">
                        </div>
-                       <div class="form-group">
+                       <div class="form-group  @if($errors->first('again_password'))has-error @endif">
                            <label>确认密码</label>
-                           <input type="password" name="again_password" class="form-control" placeholder="确认密码">
+                           <input type="password" name="again_password" class="form-control" value="{{old('again_password')}}" placeholder="确认密码">
                        </div>
                        <button type="submit" class="btn btn-default">注册</button>
+                       @if(count($errors))
+                           <ul>
+                               <li>{{$errors->first()}}</li>
+                               {{--@foreach($errors->all() as $error)--}}
+                               {{--<li>{{$error}}</li>--}}
+                               {{--@endforeach--}}
+                           </ul>
+                       @endif
                        <div class="form-group">
                            <label>还没有账号？<a href="{{url('user/login')}}">立即登录</a></label>
                        </div>
