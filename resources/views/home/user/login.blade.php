@@ -20,14 +20,15 @@
         <div class="right_box col-xs-5">
             <div>
                <div>
-                   <form>
+                   <form action="" method="post">
+                       {{csrf_field()}}
                        <div class="form-group">
                            <label>账户</label>
-                           <input type="text" class="form-control"  placeholder="账号">
+                           <input type="text" class="form-control" name="uname" placeholder="账号">
                        </div>
                        <div class="form-group">
                            <label>密码</label>
-                           <input type="password" class="form-control" placeholder="密码">
+                           <input type="password" class="form-control" name="password" placeholder="密码">
                        </div>
                        <div class="checkbox">
                            <label>

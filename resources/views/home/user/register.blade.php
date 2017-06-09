@@ -22,27 +22,31 @@
                <div>
                    <form action="" method="post">
                        {{csrf_field()}}
-                       <div class="form-group @if($errors->first('uname'))has-error @endif">
+                       <b class="form-group @if($errors->first('uname'))has-error @endif">
                            <label>账户</label>
                            <input type="text" name="uname" class="form-control" value="{{old('uname')}}" placeholder="账号">
+                           @if($errors->first('uname')) <i>{{$errors->first('uname')}}</i> @endif
                        </div>
                        <div class="form-group  @if($errors->first('password'))has-error @endif">
                            <label>密码</label>
                            <input type="password" name="password" class="form-control" value="{{old('password')}}" placeholder="密码">
+                           @if($errors->first('password')) <i>{{$errors->first('password')}}</i> @endif
                        </div>
                        <div class="form-group  @if($errors->first('again_password'))has-error @endif">
                            <label>确认密码</label>
                            <input type="password" name="again_password" class="form-control" value="{{old('again_password')}}" placeholder="确认密码">
+                           @if($errors->first('password')) <i>{{$errors->first('again_password')}}</i> @endif
                        </div>
                        <button type="submit" class="btn btn-default">注册</button>
-                       @if(count($errors))
-                           <ul>
-                               <li>{{$errors->first()}}</li>
+                       {{$errors->first('message')}}
+                       {{--@if(count($errors))--}}
+                           {{--<ul>--}}
+                               {{--<li>{{$errors->first()}}</li>--}}
                                {{--@foreach($errors->all() as $error)--}}
                                {{--<li>{{$error}}</li>--}}
                                {{--@endforeach--}}
-                           </ul>
-                       @endif
+                           {{--</ul>--}}
+                       {{--@endif--}}
                        <div class="form-group">
                            <label>还没有账号？<a href="{{url('user/login')}}">立即登录</a></label>
                        </div>

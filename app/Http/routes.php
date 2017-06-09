@@ -13,10 +13,11 @@
 //前台入口
 Route::get('/', 'Home\IndexController@index');
 Route::get('message','Home\MessageController@index');
-Route::get('user/login','Home\UserController@login');
+
 Route::get('user/reset','Home\UserController@reset');
 
-Route::any('user/register','Home\UserController@register');
+Route::any('user/login',['as'=>'login','uses'=>'Home\UserController@login']);//登录
+Route::any('user/register',['as'=>'register','uses'=>'Home\UserController@register']);//注册
 
 
 
