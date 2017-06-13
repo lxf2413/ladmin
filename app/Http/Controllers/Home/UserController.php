@@ -11,6 +11,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
+use Cookie;
 
 class UserController extends Controller{
     public function login(Request $request){
@@ -31,6 +32,7 @@ class UserController extends Controller{
             if(!$userinfo){
                 return Redirect::back()->withErrors(['message'=>'登录信息有误！']);
             }else{
+                Cookie::queue('user',$userinfo,'3600');
                 return Redirect::to('/');
             }
         }

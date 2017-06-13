@@ -1,6 +1,11 @@
 @extends('home.common.master')
 @section('title','留言区')
 @section('content')
+    <style>
+        #facebox{
+            left: 370px !important;
+        }
+    </style>
     <div class="left" id="main">
         <div id="main_content">
             <div class="post">
@@ -27,33 +32,28 @@
 
             <div class="post_meta tr">
                 <span class="emotion fa fa-smile-o mouse"></span> |
-                <span class=" mouse">确定</span>
+                <span class=" mouse" id="addMess">确定</span>
             </div>
         </div>
         <script type="text/javascript" src="{{asset('static/library/emoji/js/jquery.qqFace.js')}}"></script>
         <script type="text/javascript">
-            $(function(){
-                $('.emotion').qqFace({
-                    id : 'facebox',
-                    assign:'saytext',
-                    path:'static/library/emoji/arclist/'	//表情存放的路径
-                });
-                $(".sub_btn").click(function(){
-                    var str = $("#saytext").val();
-                    var html = replace_em(str);
-                    $("#show").html(replace_em(str));
-                });
+            $('.emotion').qqFace({
+                id : 'facebox',
+                assign:'saytext',
+                path:'static/library/emoji/arclist/'	//表情存放的路径
             });
-
-            //查看结果
-            function replace_em(str){
-
-            }
+            $(".sub_btn").click(function(){
+                var str = $("#saytext").val();
+                var html = replace_em(str);
+                $("#show").html(replace_em(str));
+            });
+            $("#addMess").click(function(){
+                var content = $("#saytext").html();
+                if(content == '' ){
+                    
+                }
+            });
         </script>
-        <style>
-            #facebox{
-                left: 370px !important;
-            }
-        </style>
+
     </div>
 @endsection

@@ -4,7 +4,9 @@
     <div class="center_wrapper">
         <div id="toplinks">
             <div id="toplinks_inner">
-                <a href="#">Sitemap</a> | <a href="#">Privacy Policy</a> | <a href="{{url('user/login')}}">登录</a>
+                <a href="#">Sitemap</a>
+                | <a href="#">Privacy Policy</a>
+                | @if(Illuminate\Support\Facades\Cookie::has('user')){{Illuminate\Support\Facades\Cookie::get('user')->uname}}@else<a href="{{url('user/login')}}">登录</a>@endif
             </div>
         </div>
         <div class="clearer">&nbsp;</div>
@@ -25,6 +27,7 @@
             <li><a href="archives.html">JAVA</a></li>
             <li><a href="empty_page.html">Linux </a></li>
             <li @if(Request::getPathInfo() == '/message') class="current_page_item" @endif><a href="{{url('message')}}">留言</a></li>
+            <li @if(Request::getPathInfo() == '/custom') class="current_page_item" @endif><a href="{{url('custom')}}">聊天</a></li>
         </ul>
         <div class="clearer">&nbsp;</div>
     </div>
@@ -89,12 +92,12 @@
 
                             <div class="thumbnails">
 
-                                <a href="#" class="thumb"><img src="sample-thumbnail.jpg" width="75" height="75" alt="" /></a>
-                                <a href="#" class="thumb"><img src="sample-thumbnail.jpg" width="75" height="75" alt="" /></a>
-                                <a href="#" class="thumb"><img src="sample-thumbnail.jpg" width="75" height="75" alt="" /></a>
-                                <a href="#" class="thumb"><img src="sample-thumbnail.jpg" width="75" height="75" alt="" /></a>
-                                <a href="#" class="thumb"><img src="sample-thumbnail.jpg" width="75" height="75" alt="" /></a>
-                                <a href="#" class="thumb"><img src="sample-thumbnail.jpg" width="75" height="75" alt="" /></a>
+                                <a href="#" class="thumb"><img src="{{asset('static/home/img/sample-thumbnail.jpg')}}" width="75" height="75" alt="" /></a>
+                                <a href="#" class="thumb"><img src="{{asset('static/home/img/sample-thumbnail.jpg')}}" width="75" height="75" alt="" /></a>
+                                <a href="#" class="thumb"><img src="{{asset('static/home/img/sample-thumbnail.jpg')}}" width="75" height="75" alt="" /></a>
+                                <a href="#" class="thumb"><img src="{{asset('static/home/img/sample-thumbnail.jpg')}}" width="75" height="75" alt="" /></a>
+                                <a href="#" class="thumb"><img src="{{asset('static/home/img/sample-thumbnail.jpg')}}" width="75" height="75" alt="" /></a>
+                                <a href="#" class="thumb"><img src="{{asset('static/home/img/sample-thumbnail.jpg')}}" width="75" height="75" alt="" /></a>
 
                                 <div class="clearer">&nbsp;</div>
 

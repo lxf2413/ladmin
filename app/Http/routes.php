@@ -15,9 +15,12 @@ Route::get('/', 'Home\IndexController@index');
 Route::get('message','Home\MessageController@index');
 
 Route::get('user/reset','Home\UserController@reset');
+Route::group(['middleware'=>'checkcookie'],function(){
+    Route::any('user/login',['as'=>'login','uses'=>'Home\UserController@login']);//登录
+    Route::any('user/register',['as'=>'register','uses'=>'Home\UserController@register']);//注册
+});
+Route::get('custom','Home\CustomController@index');
 
-Route::any('user/login',['as'=>'login','uses'=>'Home\UserController@login']);//登录
-Route::any('user/register',['as'=>'register','uses'=>'Home\UserController@register']);//注册
 
 
 
